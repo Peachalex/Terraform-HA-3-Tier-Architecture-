@@ -9,7 +9,7 @@ resource "aws_autoscaling_group" "three-tier-web-asg" {
 
 resource "aws_launch_configuration" "three-tier-web-lconfig" {
   name_prefix     = "three-tier-web-lconfig"
-  image_id        =   "ami-0e593d2b811299b15"
+  image_id        = "ami-0e593d2b811299b15"
   instance_type   = "t2.micro"
   key_name = "three-tier-web-asg-kp"
   security_groups = [ aws_security_group.three-tier-ec2-asg-sg.id ]
