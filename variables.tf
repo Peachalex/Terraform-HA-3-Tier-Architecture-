@@ -5,7 +5,7 @@ variable "db_username" {
 }
 
 variable "db_password" {
-    description = "Database adminsitrator username"
+    description = "Database adminsitrator password"
     type = string
     sensitive = true
   
