@@ -134,3 +134,13 @@ resource "aws_route_table_association" "three-tier-rt-as-6" {
 resource "aws_eip" "three-tier-nat-eip" {
    domain = "vpc"
 }
+
+resource "aws_nat_gateway" "three-tier-natgw-01" {
+  allocation_id = aws_eip.three-tier-nat-eip.id
+  subnet_id = aws_subnet.three-tier-pub-sub-1.id
+
+  tags = {
+    Name = "three-tier-natgw-01"
+  }
+  depends_on = [ aws_internet_gateway.three-tier-igw ]
+}
